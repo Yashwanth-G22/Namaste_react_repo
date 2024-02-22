@@ -1,8 +1,42 @@
-#root {
-    color: rgb(216, 4, 4);
-}
 #button {
     height: 20px;
     width: 40px;
+
+}
+
+.header{
+    /* display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 0px 30px; */
+}
+
+.logo-container > img {
+    width: 200px;
+    height: 100px;
+}
+
+.nav-items > ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 22px;
+}
+
+.nav-items > ul > li {
+    padding: 10px;
+    margin: 10px;
+}
+
+.card {
+    overflow: hidden;
+    width: 350px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.card > img {
+    height: 280px;
+    width: inherit;
+    padding: 5px;
 
 }

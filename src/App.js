@@ -1,15 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Button } from "./Button";
+import { Header } from "./Header";
+import { RestaurantCard } from "./Rescard";
+import "./index.css";
 
-const Header = () => {
+const Body = () => {
   return (
     <div>
-      <h3 id="header">Namaste React</h3>
-      <Button buttonName="click" />
+      <div className="search-bar"></div>
+      <div className="res-container">
+        <RestaurantCard />
+      </div>
     </div>
   );
 };
+
+const AppLayout = () => {
+  return (
+    <div>
+      {/* 
+     header
+     body
+     footer     
+     */}
+      <Header />
+      <Body />
+    </div>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Header />);
+root.render(<AppLayout />);
