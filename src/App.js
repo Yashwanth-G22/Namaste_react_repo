@@ -9,17 +9,7 @@ const Body = () => {
     <div>
       <div className="search-bar">Search</div>
       <div className="res-container">
-        {items.map(({ delivery, foodName, image, rating, resName }) => {
-          return (
-            <RestaurantCard
-              foodName={foodName}
-              image={image}
-              rating={rating}
-              resName={resName}
-              delivery={delivery}
-            />
-          );
-        })}
+        <RestaurantCard items={items} />
       </div>
     </div>
   );
