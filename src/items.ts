@@ -15,44 +15,37 @@ export const items = [
     },
     {
         image: '',
-        resName: '',
-        foodName: '',
-        rating: '',
-        delivery: ''
+        resName: 'Hotel Manasa',
+        foodName: 'Kima',
+        rating: '4.2',
+        delivery: '30'
     },
     {
         image: '',
-        resName: '',
-        foodName: '',
-        rating: '',
-        delivery: ''
+        resName: 'Sujana',
+        foodName: 'Thinnavara',
+        rating: '3.4',
+        delivery: '28'
     },
     {
         image: '',
-        resName: '',
-        foodName: '',
-        rating: '',
-        delivery: ''
+        resName: 'Bhramin cafe',
+        foodName: 'Meals',
+        rating: '2.3',
+        delivery: '10'
     },
     {
         image: '',
-        resName: '',
-        foodName: '',
-        rating: '',
-        delivery: ''
+        resName: 'Holege House',
+        foodName: 'Rotis',
+        rating: '4.0',
+        delivery: '30'
     },
     {
         image: '',
-        resName: '',
-        foodName: '',
-        rating: '',
-        delivery: ''
-    },
-    {
-        image: '',
-        resName: '',
-        foodName: '',
-        rating: '',
-        delivery: ''
+        resName: 'Udipi',
+        foodName: 'All items',
+        rating: '3.8',
+        delivery: '15'
     }
 ]
