@@ -4,9 +4,9 @@ export default function reducer (state = count, action) {
 
     switch(type){
         case "Increment":
-            return state +1;
+            return state + payload;
         case "Decrement":
-            return state - 1;
+            return state - payload;
         default:
             return state;
     }
