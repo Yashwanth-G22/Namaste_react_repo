@@ -5,10 +5,13 @@
 }
 
 .header {
+    position: sticky;
+    top: 0px;
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
     padding: 0px 30px;
+    background-color: rgb(227, 235, 239);
 }
 
 .logo-container>img {
@@ -55,7 +58,8 @@
 }
 
 .con-footer {
-
+    position: sticky;
+    bottom: 0px;
 }
 
 .footer {
