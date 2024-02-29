@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { items } from './items';
 import { RestaurantCard } from './Rescard';
+import { Footer } from './footer/footer';
+import { contactNo, webLink } from './constants';
 
 export const Body = () => {
   const [newFilterItems, setNewFilterItems] = useState();
@@ -14,6 +16,9 @@ export const Body = () => {
       </div>
       <div className="res-container">
         <RestaurantCard items={newFilterItems ? newFilterItems : items} />
+      </div>
+      <div className='con-footer'>
+        <Footer contactNo={contactNo} webLink={webLink} />
       </div>
     </div>
   );
