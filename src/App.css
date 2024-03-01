@@ -69,3 +69,7 @@
     background-color: rgb(9, 16, 65);
     color: white;
 }
+
+.search {
+    display: flex;
+}
