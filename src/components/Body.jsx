@@ -7,18 +7,20 @@ import { contactNo, webLink } from './constants';
 export const Body = () => {
   const [newFilterItems, setNewFilterItems] = useState(items);
   const searchText = useRef();
+
   const handleSearch = () => {
-    console.log(searchText.current.value);
+    const text = searchText.current.value;
+    setNewFilterItems(items.filter((elem) =>
+      elem.foodName.toLocaleLowerCase().includes(text.toLocaleLowerCase()) ||
+      elem.resName.toLocaleLowerCase().includes(text.toLocaleLowerCase()))
+    );
   }
-  console.log(searchText)
-  const filterItems = () => {
-    setNewFilterItems(items.filter(res => res.rating > 3.5))
-  };
+
   return (
     <div>
       <div className="search-bar">
         <div className='search'>
-          <input type="search" className='search-input' defaultValue='fruits' ref={searchText}/>
+          <input type="search" className='search-input' ref={searchText} />
           <button className='search-btn' onClick={handleSearch}>Search</button>
         </div>
       </div>
