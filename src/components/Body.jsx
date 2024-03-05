@@ -1,9 +1,7 @@
-import { useRef, useState } from 'react';
 import { items } from './items';
-import { RestaurantCard } from './Rescard';
-import { Footer } from './footer/footer';
-import { contactNo, webLink } from './constants';
 import styled from 'styled-components';
+import { useRef, useState } from 'react';
+import { RestaurantCard } from './Rescard';
 
 const BodyWrapper = styled.div`
   display: grid;
