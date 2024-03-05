@@ -20,11 +20,6 @@ const AppLayoutWrapper = styled.div`
 const AppLayout = () => {
   return (
     <AppLayoutWrapper>
-      {/* 
-     header
-     body
-     footer     
-    */}
       <Header />
       <Body />
       <Footer/>
