@@ -6,6 +6,8 @@ export const ResMenuPage = () => {
                 <li>Biryani</li>
                 <li>Burger</li>
                 <li>Cokes</li>
+                <li>something</li>
+                <li>Lemon</li>
             </ul>
         </div>
     )
