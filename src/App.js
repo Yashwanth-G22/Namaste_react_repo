@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import store from "./store/store";
 import styled from "styled-components";
 import { Provider } from "react-redux";
@@ -8,22 +8,27 @@ import { Error } from "./components/Error";
 import { About } from "./components/About";
 import { Header } from "./components/Header";
 import { Cart } from "./components/cart/cart";
-import { Contact } from "./components/Contact";
 import { Footer } from "./components/footer/footer";
 import { ResMenuPage } from "./components/res-container/Res-menu-page";
-import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 const AppLayoutWrapper = styled.div`
   display: grid;
   row-gap: 10px;
 `;
 
+const Contact = lazy(async () => {
+  const module = await import('./components/Contact');
+  console.log(module.Contact);
+  return { default: module.Contact };
+});
+
 const AppLayout = () => {
   return (
     <AppLayoutWrapper>
       <Header />
-      <Outlet/>
-      <Footer/>
+      <Outlet />
+      <Footer />
     </AppLayoutWrapper>
   );
 };
@@ -31,30 +36,33 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
   {
     path: '/',
-    element: <AppLayout/>,
+    element: <AppLayout />,
     children: [
       {
         path: '/',
-        element: <Body/>
+        element: <Body />
       },
       {
         path: '/about',
-        element: <About/>
+        element: <About />
       },
       {
         path: '/contact',
-        element: <Contact/>
+        element: (
+          <Suspense fallback={<h2>loading...</h2>}>
+            <Contact />
+          </Suspense>)
       },
       {
         path: '/cart',
-        element: <Cart/>
+        element: <Cart />
       },
       {
         path: '/restaurant/:resId',
-        element: <ResMenuPage/>
+        element: <ResMenuPage />
       }
     ],
-    errorElement: <Error/>
+    errorElement: <Error />
   }
 ])
 
@@ -62,6 +70,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>
-    <RouterProvider router={appRouter}/>
+    <RouterProvider router={appRouter} />
   </Provider>
 );
