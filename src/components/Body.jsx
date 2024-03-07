@@ -1,7 +1,8 @@
 import { items } from './items';
 import styled from 'styled-components';
-import { useRef, useState } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import { RestaurantCard } from './Rescard';
+import { useOnlineStatus } from '../utils/useOnlineStatus'
 
 const BodyWrapper = styled.div`
   display: grid;
@@ -11,6 +12,7 @@ const BodyWrapper = styled.div`
 export const Body = () => {
   const [newFilterItems, setNewFilterItems] = useState(items);
   const searchText = useRef();
+  const { onlineStatus } = useOnlineStatus();
 
   const handleSearch = () => {
     const text = searchText.current.value;
@@ -19,18 +21,21 @@ export const Body = () => {
       elem.resName.toLocaleLowerCase().includes(text.toLocaleLowerCase()))
     );
   }
-
-  return (
-    <BodyWrapper>
-      <div className="search-bar">
-        <div className='search'>
-          <input type="search" className='search-input' ref={searchText} />
-          <button className='search-btn' onClick={handleSearch}>Search</button>
+  const renderBody = useCallback(() => {
+    return !onlineStatus ? <h1>U r in offline Mode!! plz check ur internet connection</h1> : (
+      <BodyWrapper>
+        <div className="search-bar">
+          <div className='search'>
+            <input type="search" className='search-input' ref={searchText} />
+            <button className='search-btn' onClick={handleSearch}>Search</button>
+          </div>
         </div>
-      </div>
-      <div className="res-container">
-        <RestaurantCard items={newFilterItems ? newFilterItems : items} />
-      </div>
-    </BodyWrapper>
-  );
+        <div className="res-container">
+          <RestaurantCard items={newFilterItems ? newFilterItems : items} />
+        </div>
+      </BodyWrapper>
+    )
+  }, [onlineStatus]);
+
+  return renderBody();
 };
