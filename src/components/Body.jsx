@@ -2,7 +2,7 @@ import { items } from './items';
 import styled from 'styled-components';
 import { useRef, useState, useCallback } from 'react';
 import { RestaurantCard } from './Rescard';
-import { useOnlineStatus } from '../utils/useOnlineStatus'
+import { useOnlineStatus } from '../hooks/useOnlineStatus'
 
 const BodyWrapper = styled.div`
   display: grid;

@@ -1,4 +1,4 @@
-import { useRestrounentMenu } from "../../utils/useRestrounentMenu";
+import { useRestrounentMenu } from "../../hooks/useRestrounentMenu";
 
 export const Cart = () => {
 
