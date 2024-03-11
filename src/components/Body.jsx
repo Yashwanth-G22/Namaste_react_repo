@@ -14,10 +14,10 @@ const BodyWrapper = styled.div`
 const InputElement = styled.input``;
 
 const ResContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
 `;
 
 export const Body = () => {
