@@ -5,12 +5,12 @@ import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import { Body } from "./components/Body";
 import { Error } from "./components/Error";
-import { About } from "./components/About";
 import { Header } from "./components/Header";
 import { Cart } from "./components/cart/cart";
 import { Footer } from "./components/footer/footer";
 import { ResMenuPage } from "./components/res-container/Res-menu-page";
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { useLazyLoading } from "./hooks/useLazyloading";
 
 const AppLayoutWrapper = styled.div`
   display: grid;
@@ -22,6 +22,8 @@ const Contact = lazy(async () => {
   console.log(module.Contact);
   return { default: module.Contact };
 });
+
+const About =  useLazyLoading(() => import('./components/About'));
 
 const AppLayout = () => {
   return (
@@ -44,14 +46,19 @@ const appRouter = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About />
+        element: (
+          <Suspense fallback={<h2>loading...</h2>}>
+            <About />
+          </Suspense>
+          )
       },
       {
         path: '/contact',
         element: (
           <Suspense fallback={<h2>loading...</h2>}>
             <Contact />
-          </Suspense>)
+          </Suspense>
+          )
       },
       {
         path: '/cart',

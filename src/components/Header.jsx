@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { LOGO } from "./constants"
 import { Link } from 'react-router-dom';
-import { useOnlineStatus } from "../utils/useOnlineStatus";
+import { useOnlineStatus } from "../hooks/useOnlineStatus";
 
 export const Header = () => {
     const [state, setState] = useState('logout')
-    const {onlineStatus} = useOnlineStatus();
+    const { onlineStatus } = useOnlineStatus();
 
     const updateBtn = () => {
         if (state === 'login') setState('logout');
