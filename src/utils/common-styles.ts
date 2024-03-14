@@ -16,3 +16,9 @@ export const SecondaryButton = styled.button`
     border: 1px solid black;
     border-radius: 10px;
 `;
+
+export const PrimaryButton = styled.button`
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+`;
