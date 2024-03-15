@@ -1,9 +1,9 @@
 import { items } from './items';
 import styled from 'styled-components';
 import { useRef, useState, useCallback } from 'react';
-import { RestaurantCard } from './Rescard';
 import { useOnlineStatus } from '../hooks/useOnlineStatus';
 import { StyledColumnDiv, SecondaryButton } from '../utils/common-styles'
+import { ResMainContainer } from './Rescontainer';
 
 const BodyWrapper = styled.div`
   display: grid;
@@ -14,10 +14,10 @@ const BodyWrapper = styled.div`
 const InputElement = styled.input``;
 
 const ResContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
 `;
 
 export const Body = () => {
@@ -42,7 +42,7 @@ export const Body = () => {
           </div>
         </StyledColumnDiv>
         <ResContainer>
-          <RestaurantCard items={newFilterItems ? newFilterItems : items} />
+          <ResMainContainer items={newFilterItems ? newFilterItems : items} />
         </ResContainer>
       </BodyWrapper>
     )

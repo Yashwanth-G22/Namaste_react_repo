@@ -4,7 +4,8 @@ export const items = [
         resName: 'Megana Foods',
         foodName: 'Biryani',
         rating: '3.4',
-        delivery: '20'
+        delivery: '20',
+        promoted: true
     },
     {
         image: '',
@@ -18,7 +19,8 @@ export const items = [
         resName: 'Hotel Manasa',
         foodName: 'Kima',
         rating: '4.2',
-        delivery: '30'
+        delivery: '30',
+        promoted: true
     },
     {
         image: '',
@@ -46,6 +48,7 @@ export const items = [
         resName: 'Udipi',
         foodName: 'All items',
         rating: '3.8',
-        delivery: '15'
+        delivery: '15',
+        promoted: true
     }
 ]
