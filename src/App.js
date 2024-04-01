@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from "react";
-import store from "./store/store";
 import styled from "styled-components";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
@@ -26,6 +25,7 @@ const Contact = lazy(async () => {
 const About =  useLazyLoading(() => import('./components/About'));
 
 const AppLayout = () => {
+  
   return (
     <AppLayoutWrapper>
       <Header />
