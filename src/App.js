@@ -1,13 +1,12 @@
 import React, { lazy, Suspense } from "react";
 import styled from "styled-components";
-import ReactDOM from "react-dom/client";
 import { Body } from "./components/Body";
 import { Error } from "./components/Error";
 import { Header } from "./components/Header";
 import { Cart } from "./components/cart/cart";
 import { Footer } from "./components/footer/footer";
 import { ResMenuPage } from "./components/res-container/Res-menu-page";
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, Outlet } from 'react-router-dom';
 import { useLazyLoading } from "./hooks/useLazyloading";
 
 const AppLayoutWrapper = styled.div`
@@ -34,7 +33,7 @@ const AppLayout = () => {
   );
 };
 
-const appRouter = createBrowserRouter([
+export const appRouter = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
@@ -67,7 +66,3 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />
   }
 ])
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<RouterProvider router={appRouter} />);
