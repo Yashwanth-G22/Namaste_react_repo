@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from "react";
 import styled from "styled-components";
-import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import { Body } from "./components/Body";
 import { Error } from "./components/Error";
@@ -75,8 +74,4 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <Provider store={store}>
-    <RouterProvider router={appRouter} />
-  </Provider>
-);
+root.render(<RouterProvider router={appRouter} />);
